@@ -1,13 +1,13 @@
 server:
   port: 8000
   servlet:
-    contextPath: /estore_zone_service/api/v1
+    contextPath: /medlinc-backend-service/api/v1
 spring:
   application:
-    name:  estore-zone-service 
+    name:  medlinc-backend-service 
   datasource:
     driverClassName:  com.mysql.cj.jdbc.Driver
-    url:  jdbc:mysql://localhost:3306/estore_zone_database
+    url:  jdbc:mysql://localhost:3306/capstone_db
     userName:  root
     password:  Yellow#123
   jpa:
@@ -17,4 +17,4 @@ spring:
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql:  true   
-
+  

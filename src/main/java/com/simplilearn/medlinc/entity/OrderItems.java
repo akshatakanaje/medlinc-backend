@@ -52,7 +52,7 @@ public class OrderItems {
 	@Column(name="quantity")
 	private int quantity;
 	
-	@Column(name="quantity")
+	@Column(name="totalPrice")
 	private int totalPrice;
 
 }
