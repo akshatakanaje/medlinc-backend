@@ -95,9 +95,9 @@ public class OrderItemsController {
 		boolean exists = orderItemsService.existsById(orderItemId);
 		if(exists) {
 			orderItemsService.deleteById(orderItemId);
-			return new ResponseDto("Success","OrderItem deleted", new Date(), null);
+			return new ResponseDto("Success","OrderItem is deleted", new Date(), null);
 		}
-		throw new NotFoundException("Carts does not exist with Id '"+ orderItemId +"'");
+		throw new NotFoundException("OrderItem does not exist with Id '"+ orderItemId +"'");
 	}
     
 }

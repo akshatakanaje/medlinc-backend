@@ -10,8 +10,7 @@ import com.simplilearn.medlinc.service.CategoriesService;
 
 @Service
 public class CategoriesServiceImp implements CategoriesService{
-	
-	
+		
 	@Autowired
     CategoriesRepository categoriesRepository;
 
