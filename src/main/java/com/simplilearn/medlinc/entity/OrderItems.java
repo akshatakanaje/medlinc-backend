@@ -25,26 +25,11 @@ public class OrderItems {
 	@Column(name="orderId")
 	private int orderId;
 	
+	@Column(name="medicineId")
+	private int medicineId;
 	
-	@Column(name="productId")
-	private int productId;
-	
-	@Column(name="productCode")
-	private String productCode;
-	
-	@Column(name=" productImg")
-	private String productImg;
-	
-
-	@Column(name="productTitle")
-	private String productTitle;
-	
-
-	@Column(name="productDescription")
-	private String productDescription;
-	
-	@Column(name="productCategory")
-	private String productCategory;
+	@Column(name="medicineName")
+	private String medicineName;
 	
 	@Column(name="price")
 	private int price;

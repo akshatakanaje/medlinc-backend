@@ -3,6 +3,7 @@ package com.simplilearn.medlinc.service;
 import java.util.List;
 import java.util.Optional;
 
+import com.simplilearn.medlinc.dto.LoginReqDto;
 import com.simplilearn.medlinc.entity.Admins;
 
 public interface AdminsService {
@@ -20,6 +21,8 @@ public interface AdminsService {
 	boolean existsById(int adminId);
 
 	void deleteById(int id);
+
+	boolean login(LoginReqDto loginReqDto);
 
 	
 }

@@ -7,7 +7,7 @@ import com.simplilearn.medlinc.entity.OrderItems;
 
 public interface OrderItemsService {
 
-	List<OrderItems> findByProductTitleContaining(String title);
+	
 
 	List<OrderItems> findAll();
 
@@ -18,5 +18,7 @@ public interface OrderItemsService {
 	OrderItems save(OrderItems orderItems);
 
 	void deleteById(int orderItemId);
+
+	List<OrderItems> findById(String medicineId);
 
 }

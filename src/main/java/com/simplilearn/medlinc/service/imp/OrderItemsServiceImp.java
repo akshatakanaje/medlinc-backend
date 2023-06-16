@@ -16,10 +16,6 @@ public class OrderItemsServiceImp implements OrderItemsService{
 	@Autowired 
 	OrderItemsRepository orderItemsRepository;
 
-	@Override
-	public List<OrderItems> findByProductTitleContaining(String title) {
-		return orderItemsRepository.findByProductTitleContaining(title);
-	}
 
 	@Override
 	public List<OrderItems> findAll() {
@@ -45,6 +41,11 @@ public class OrderItemsServiceImp implements OrderItemsService{
 	public void deleteById(int orderItemId) {
 		orderItemsRepository.deleteById(orderItemId);
 		
+	}
+
+	@Override
+	public List<OrderItems> findById(String medicineId) {
+		return  findById(medicineId);
 	}
 
 }

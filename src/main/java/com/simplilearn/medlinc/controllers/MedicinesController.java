@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.simplilearn.medlinc.dto.ResponseDto;
 import com.simplilearn.medlinc.entity.Medicines;
@@ -28,13 +27,14 @@ public class MedicinesController {
 	MedicinesService medicinesService;
 	
 
-	@GetMapping("")
+
+	@GetMapping()
 	public List<Medicines> getAllMedicines() {
-		return medicinesService.fetchMedicineList();
+		return medicinesService.getAll();
 
 	}
 	
-	
+
 	@GetMapping("/{medicineId}")
 	public Optional<Medicines> getOne(@PathVariable("medicineId") int medicineId){
 		Optional<Medicines> medicineData = medicinesService.findById(medicineId);

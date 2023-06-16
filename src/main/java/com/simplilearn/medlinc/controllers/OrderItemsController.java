@@ -34,9 +34,9 @@ public class OrderItemsController {
 	 * @return
 	 */
     @GetMapping
-	public List<OrderItems> getAll(@RequestParam(value="title", required=false) String title){
-		if(title!=null && title!="") {
-			return orderItemsService.findByProductTitleContaining(title);
+	public List<OrderItems> getAll(@RequestParam(value="medicineId", required=false) String medicineId){
+		if(medicineId != null) {
+			return orderItemsService.findById(medicineId);
 		}
 		return orderItemsService.findAll();
 	}
