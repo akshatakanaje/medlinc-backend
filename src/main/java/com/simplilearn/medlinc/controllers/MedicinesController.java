@@ -28,9 +28,9 @@ public class MedicinesController {
 	MedicinesService medicinesService;
 	
 
-	@GetMapping("/medicines")
+	@GetMapping("")
 	public List<Medicines> getAllMedicines() {
-		return medicinesService.fetcMedicineList();
+		return medicinesService.fetchMedicineList();
 
 	}
 	

@@ -11,7 +11,7 @@ public interface MedicinesRepository extends JpaRepository<Medicines, Integer>{
 
 
 
-	List<Medicines> fetcMedicineList();
+	List<Medicines> fetchMedicineList();
 
 	
 

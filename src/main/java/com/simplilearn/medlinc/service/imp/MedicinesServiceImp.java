@@ -45,8 +45,8 @@ public class MedicinesServiceImp implements MedicinesService {
 
 
 	@Override
-	public List<Medicines> fetcMedicineList() {
-		return medicinesRepository.fetcMedicineList();
+	public List<Medicines> fetchMedicineList() {
+		return medicinesRepository.fetchMedicineList();
 	}
 
 }

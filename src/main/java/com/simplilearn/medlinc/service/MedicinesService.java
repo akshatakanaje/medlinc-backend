@@ -17,7 +17,7 @@ public interface MedicinesService {
 
 	void deleteById(int medicineId);
 
-	List<Medicines> fetcMedicineList();
+	List<Medicines> fetchMedicineList();
 
 	
 
