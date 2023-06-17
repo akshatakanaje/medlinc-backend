@@ -4,8 +4,10 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.simplilearn.medlinc.dto.LoginReqDto;
 import com.simplilearn.medlinc.entity.Users;
 import com.simplilearn.medlinc.repository.UsersRepository;
 import com.simplilearn.medlinc.service.UsersService;
@@ -15,6 +17,8 @@ public class UsersServiceImp implements UsersService{
 
 	@Autowired
     UsersRepository usersRepository;
+	
+	BCryptPasswordEncoder passwordEncoder;
 	
 	
 	@Override
@@ -38,8 +42,11 @@ public class UsersServiceImp implements UsersService{
 	}
 
 	@Override
-	public Users save(Users users) {
-		return usersRepository.save(users);
+	public Users save(Users usersReq) {
+		passwordEncoder = new BCryptPasswordEncoder();
+		String encodedPassword = passwordEncoder.encode(usersReq.getPassword());
+		usersReq.setPassword(encodedPassword);
+		return usersRepository.save(usersReq);
 	}
 
 	@Override
@@ -51,6 +58,18 @@ public class UsersServiceImp implements UsersService{
 	public void deleteById(int id) {
 		usersRepository.deleteById(id);
 		
+	}
+
+	@Override
+	public boolean login(LoginReqDto loginReqDto) {
+		passwordEncoder = new BCryptPasswordEncoder();
+		Users user  = usersRepository.findByEmail(loginReqDto.getEmail());
+		return passwordEncoder.matches(loginReqDto.getPassword(), user.getPassword());
+	}
+
+	@Override
+	public Users findByEmail(String email) {
+		return usersRepository.findByEmail(email);
 	}
 
 }
