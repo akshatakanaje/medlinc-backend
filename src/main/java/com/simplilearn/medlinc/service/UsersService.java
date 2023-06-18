@@ -16,8 +16,6 @@ public interface UsersService {
 
 	boolean existsByEmail(String email);
 
-	
-
 	boolean existsById(int userId);
 
 	void deleteById(int id);
